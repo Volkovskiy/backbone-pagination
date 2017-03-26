@@ -1,5 +1,6 @@
 // init development & production modes
-let isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+//let isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+let isDevelopment = false;
 
 //init packages
 const gulp = require('gulp'),

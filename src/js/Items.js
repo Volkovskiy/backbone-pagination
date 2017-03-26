@@ -3,7 +3,7 @@ import Paginator from 'backgrid-paginator'
 
 const Items = Backbone.PageableCollection.extend({
 	mode: 'client',
-	url:  "../json/items.json" || ".json/items.json",
+	url:  "https://volkovskiy.github.io/backbone-pagination/json/items.json",
 	state: {
 		firstPage: 1,
 		currentPage: 0,
