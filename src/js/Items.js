@@ -8,7 +8,8 @@ const Items = Backbone.PageableCollection.extend({
 		firstPage: 1,
 		currentPage: 0,
 		pageSize: 12
-	}
+	},
+	pageSizeValues: [12, 24, 48]
 });
 
 const items = new Items();

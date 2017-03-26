@@ -10,7 +10,7 @@ import grid from './grid';
 
 
 
-const paginator = new Backgrid.Extension.Paginator({collection: items});
+const paginator = new Backgrid.Extension.Paginator({collection: items, windowSize: 3});
 
 items.fetch();
 

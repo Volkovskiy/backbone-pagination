@@ -1,4 +1,4 @@
-//@import "bourbon"
+@import "bourbon"
 @import "vars"
 @import "libs"
 @import "fonts"
@@ -6,9 +6,70 @@
 
 //Custom styles here
 
-
 .backgrid td
 	text-align: center
+
+li.disabled
+	visibility: hidden
+
+
+.backgrid-paginator ul li
+	a
+		color: #333
+		border: 2px solid transparent
+	&.active
+		a
+			background-color: inherit
+			color: #333
+			border: 2px solid #666666
+
+.backgrid-paginator
+	text-align: right
+
+.backgrid-paginator ul
+	margin: 0
+
+.backgrid-paginator ul li
+	text-align: center
+
+.ps-select
+	font-size: 14px
+	padding: 5px
+	background-color: transparent
+	border: 1px solid #ddd
+
+.backgrid-paginator, .ps-select
+	margin: 10px
+
+.backgrid
+	color: #333
+
+.backgrid th
+	font-weight: normal
+	text-transform: uppercase
+	padding: 10px 5px
+	border-right: 1px solid #ddd
+	border-bottom: 2px solid #ddd
+	&:first-child
+		width: 25%
+	&:nth-child(2)
+		width: 40%
+	&:last-of-type
+		border-right: none
+
+.backgrid thead
+	border-top: 1px solid #ddd
+
+.backgrid td
+	border: none
+	text-align: center !important
+	padding: 15px 10px
+
+.backgrid tr
+	border-bottom: 1px solid #ddd
+	&:hover
+		background-color: #efefef
+
 
 
 @import "media"

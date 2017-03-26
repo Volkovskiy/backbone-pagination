@@ -1,6 +1,7 @@
 // init development & production modes
 let isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
+
 //init packages
 const gulp = require('gulp'),
 	sass = require('gulp-sass'),
@@ -50,6 +51,15 @@ const	webpackConfig  = {
         })]
 };
 
+const ignoreStyles = [
+    /\.showed/,
+    /\.active/,
+    /grid/,
+    /\.backgrid/,
+    /\.renderable/,
+    /\.disabled/,
+    /\.ps-select/
+];
 
 gulp.task(styles);
 function styles() {
@@ -61,6 +71,7 @@ function styles() {
         }).on('error', sass.logError))
         .pipe(gulpif(!isDevelopment, uncss({
             html: ['app/*.html'],
+            ignore: ignoreStyles
         })))
         .pipe(cleanCSS())
         .pipe(autoprefixer(['last 15 versions']))
@@ -80,7 +91,7 @@ function critical() {
         .pipe(cleanCSS())
         .pipe(gulpif(!isDevelopment, uncss({
             html: ['app/*.html'],
-            ignore: ['h1']
+            ignore: ignoreStyles
         })))
         .pipe(gulp.dest('./app/css'))
 }
@@ -159,6 +170,7 @@ function toDest(done) {
     const buildFonts = gulp.src('app/fonts/**/*').pipe(gulp.dest('dist/fonts'));
     const buildImg = gulp.src('app/img/**/*').pipe(gulp.dest('dist/img'));
     const buildJs = gulp.src('app/js/*.js').pipe(gulp.dest('dist/js'));
+    const json = gulp.src('app/json/*.json').pipe(gulp.dest('dist/json'));
     done()
 }
 
