@@ -3,6 +3,9 @@ import Paginator from 'backgrid-paginator'
 
 const Items = Backbone.PageableCollection.extend({
 	mode: 'client',
+
+	//only for gh-pages bug!
+	//url:  "../json/items.json",
 	url:  "https://volkovskiy.github.io/backbone-pagination/json/items.json",
 	state: {
 		firstPage: 1,
