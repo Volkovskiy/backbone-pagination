@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.idea/
+app/css/
+app/js/
+app/index.html
